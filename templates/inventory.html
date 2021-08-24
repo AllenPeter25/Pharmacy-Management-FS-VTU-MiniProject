@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>inventory</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <right>
+            <h1><form action="/add" method="post">
+            <input type="submit"  class="btn btn-primary" value="BACK"/>
+            </form></h1>
+        </right>
+
+<center>
+	<div class="container">
+        <br><br><br>
+        <body style="background-color:rgb(168, 164, 166);"></body>
+        <h1 class="text-center"  style="background-color:rgb(143, 64, 71);">INVENTORY</h1>
+<br><br><br>
+<h1>{{empty}}<h1>
+{% block content %}
+	<table border="5"  class="table table-hover">
+        <thead><tr><th style="font-size:15px">Name</th><th style="font-size:15px">STOCKS</th></tr></thead>
+	{% for key,value in res.items() %}
+	<tr>
+		<th style="font-size:15px">
+			{{key}}
+		</th>
+		<td style="font-size:15px">
+			{{value}}
+		</td>
+	</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
+</center>
+</div>
+</body>	
+<html>

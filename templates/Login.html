@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login  Page</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <body style="background-color:rgb(168, 164, 166);"></body>
+        <br><br><br>
+        <h1 class="text-center"  style="background-color:rgb(143, 64, 71);">LOGIN</h1>
+        
+        <center>
+        <form action="/menu" method="POST">
+            <br><br>
+                <label> Enter Password:</label>  <br> <br>
+                    <input type="password"name="password" required="required"/>
+                </br></br></br>
+            <div class="form-group">         
+                  <button type="submit" class="btn btn-success btn-lg" name="submit">Submit</button>
+            </div>
+        </form>
+        {{msg}}
+        </center>
+    </div>
+</body>
+</html>

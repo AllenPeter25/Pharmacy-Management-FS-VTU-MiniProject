@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>billing</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+    <body>
+        <div class="container">
+            <body style="background-color:rgb(168, 164, 166);"></body>
+        <br>
+        <form action="/menu_" method="POST">
+            <input type="Submit" class="btn btn-primary" value="Menu">
+        </form>
+        <center>
+            <div class="billing">
+    
+                <h1 class="text-center"  style="background-color:rgb(143, 64, 71);">BILLING</h1>
+                <form action="#" method="post">
+                    <select name="name" class="form-control" method="GET">
+                    {% for i in dropdown %}
+                    <option value="{{i}}" SELECTED>{{i}}</option>"
+                    {% endfor %}
+            </select>
+            <br>
+                    <p><input type="number" name="quantity" placeholder="Quantity" class="form-control" required="required"/></p>
+                    <p><input type="number" name="amt" placeholder="Price per unit Quantity" class="form-control" required="required"/></p>
+                    <p><input type="submit" class="btn btn-success btn-lg" value="Submit"/></p>
+                </form>
+            </div>
+        <p>{{msg}}</p>
+	        <table border="5"  class="table table-hover">
+            <thead><tr><th style="font-size:15px">NAME</th><th style="font-size:15px">QUANTITY</th><th style="font-size:15px">AMOUNT</th></tr></thead>
+	        {% for i in tab %}
+	            <tr>
+                        {% for j in i %}
+                            <th style="font-size:15px">{{j}}</th>
+                        {% endfor %}
+	            </tr>
+	        {% endfor %}
+	        </table>
+            <br>
+            <form action='/receipt' method='post'>
+                <input type="Submit" class="btn btn-success btn-lg" value="Done">
+            </form>
+        </center>
+        </div>
+    </body>
+</html>

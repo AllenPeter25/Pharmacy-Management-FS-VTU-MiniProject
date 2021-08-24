@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Receipt</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+    <title>receipt</title> 
+    <body>
+        <br><br><br>
+        <center>
+            <div class="container">
+                <div class="border border-dark">
+            <h1 class="text-center"  style="background-color:rgb(143, 64, 71);">RECEIPT</h1>
+            <form action="/receipt" method="POST">
+                <h2>Receipt No. {{rno}}</h2>
+                <p><input type="text" name="name" placeholder="Customer name" required=required/></p>
+                <p><input type="submit"class="btn btn-success btn-lg" value="Submit"/></p>
+                <table border="1">
+                    <thead><tr><th style="font-size:15px">NAME</th><th style="font-size:15px">QUANTITY</th><th style="font-size:15px">AMOUNT</th></tr></thead>
+                    {% for i in tab %}
+                        <tr>
+                                {% for j in i %}
+                                    <th style="font-size:15px">{{j}}</th>
+                                {% endfor %}
+                        </tr>
+                    {% endfor %} 
+                </table>
+		<h2>Total: {{total}} rs<h2>
+            </form>
+            </div></div>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Serach-Receipt</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>      
+            <br><br>
+            <form action="/menu_" method="POST">
+             <input type="Submit" class="btn btn-primary" value="Menu"></form>
+
+        <center>
+            <div class="container">
+            <div class="border border-dark">
+            <h1 class="text-center"  style="background-color:rgb(143, 64, 71);">SEARCH RECEIPT</h1>
+            <form action="/search_" method="POST">
+                <p><input type="number" name="no" placeholder="Receipt No" required=required/></p>
+                <p><input type="submit"class="btn btn-success btn-lg" value="Submit"/></p>
+                <h3>Receipt No. {{no}}</h3>
+                <h3>{{date}}</h3>
+                <h3>{{name}}</h3>
+                <table border="1">
+                    <thead><tr><th style="font-size:15px">NAME</th><th style="font-size:15px">QUANTITY</th><th style="font-size:15px">AMOUNT</th></tr></thead>
+                    {% for i in tab %}
+                        <tr>
+                                {% for j in i %}
+                                    <th style="font-size:15px">{{j}}</th>
+                                {% endfor %}
+                        </tr>
+                    {% endfor %} 
+                </table>
+            <h2>{{total}}</h2>
+            </form>
+        </div></div>
+        </center>
+    </body>
+</html>
